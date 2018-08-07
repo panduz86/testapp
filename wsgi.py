@@ -1,7 +1,9 @@
-def app(environ, start_response):
-    data = b"Hello, World!\n"
-    start_response("200 OK", [
-        ("Content-Type", "text/plain"),
-        ("Content-Length", str(len(data)))
-    ])
-    return iter([data])
+from flask import Flask
+application = Flask(__name__)
+
+@application.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    application.run()
