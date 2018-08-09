@@ -1,4 +1,4 @@
-import mydate
+from lib import mydate
 
 
 def main():
